@@ -1,0 +1,314 @@
+
+/* ==========================================================
+ *   NERV TERMINAL // SWAYNC
+ *   Evangelion-inspired notification center
+ *   ========================================================== */
+
+
+/* ---------- COLOR SYSTEM ---------- */
+
+@define-color nerv_black       #0d0709;
+@define-color nerv_panel       #10090b;
+@define-color nerv_card        #120b0d;
+@define-color nerv_red         #e60026;
+@define-color nerv_red_dark    #780013;
+@define-color nerv_orange      #ff6a00;
+@define-color nerv_orange_dim  #a74300;
+@define-color nerv_text        #f0e7df;
+@define-color nerv_muted       #927d78;
+@define-color nerv_line        #590d18;
+
+/* ---------- GLOBAL ---------- */
+
+* {
+  font-family: "Rajdhani", "sans-serif";
+  font-size: 15px;
+  border-radius: 0;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+.control-center,
+.notification-window {
+  background: transparent;
+  color: @nerv_text;
+}
+
+/* ---------- CONTROL CENTER FRAME ---------- */
+
+.control-center {
+  background-color: @nerv_black;
+
+  border: 2px solid @nerv_red;
+
+  padding: 12px;
+  margin: 0;
+
+  color: @nerv_text;
+}
+
+/* ---------- HEADER / NERV TERMINAL ---------- */
+
+.widget-title {
+  background-color: @nerv_panel;
+
+  border: 1px solid @nerv_line;
+  border-left: 4px solid @nerv_red;
+
+  padding: 12px 14px;
+  margin: 0 0 10px 0;
+
+  color: @nerv_orange;
+
+  font-size: 21px;
+  font-weight: 700;
+}
+
+/* Clear All */
+
+.widget-title button {
+  background-color: @nerv_card;
+  color: @nerv_orange;
+
+  border: 1px solid @nerv_red_dark;
+  border-radius: 0;
+
+  padding: 7px 12px;
+  margin-left: 8px;
+
+  font-weight: 700;
+}
+
+.widget-title button:hover {
+  background-color: @nerv_red_dark;
+  color: @nerv_black;
+  border-color: @nerv_orange;
+}
+
+/* ---------- DND / COMMAND LOCKDOWN ---------- */
+
+.widget-dnd {
+  background-color: @nerv_panel;
+
+  border: 1px solid @nerv_line;
+  border-left: 3px solid @nerv_orange;
+
+  padding: 8px 12px;
+  margin-bottom: 12px;
+
+  color: @nerv_orange;
+  font-weight: 700;
+}
+
+.widget-dnd > switch {
+  background-color: #35150d;
+  border: 1px solid @nerv_red_dark;
+  border-radius: 0;
+}
+
+.widget-dnd > switch:checked {
+  background-color: @nerv_orange;
+  border-color: @nerv_orange;
+}
+
+.widget-dnd > switch slider {
+  background-color: @nerv_text;
+  border-radius: 0;
+}
+
+/* ---------- NOTIFICATION LIST ---------- */
+
+.widget-notifications {
+  background: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+/* ---------- INDIVIDUAL NOTIFICATION ---------- */
+
+.notification {
+  background-color: @nerv_card;
+  color: @nerv_text;
+
+  border: 1px solid @nerv_line;
+  border-left: 4px solid @nerv_red_dark;
+
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+
+/* Inner notification surface */
+
+.notification-content {
+  background: transparent;
+  padding: 10px;
+}
+
+.notification-default-action,
+.notification-action {
+  background: transparent;
+  color: @nerv_text;
+  border-radius: 0;
+}
+
+.notification-default-action:hover,
+.notification-action:hover {
+  background-color: #251015;
+}
+
+/* Notification title */
+
+.summary {
+  color: @nerv_orange;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+/* Notification body */
+
+.body {
+  color: @nerv_muted;
+  font-size: 14px;
+}
+
+/* Application / notification icons */
+
+.image,
+.app-icon {
+  border-radius: 0;
+}
+
+/* Close button */
+
+.close-button {
+  background-color: @nerv_panel;
+  color: @nerv_orange;
+
+  border: 1px solid @nerv_line;
+  border-radius: 0;
+}
+
+.close-button:hover {
+  background-color: @nerv_red;
+  color: @nerv_text;
+}
+
+/* ---------- CRITICAL ALERTS ---------- */
+
+/* Verify the exact urgency class with GTK Inspector
+ *   on your installed SwayNC version. */
+
+.notification.critical {
+  background-color: #1b080a;
+  border: 1px solid @nerv_orange;
+  border-left: 6px solid @nerv_orange;
+}
+
+.notification.critical .summary {
+  color: @nerv_red;
+}
+
+/* ---------- ACTION BUTTONS ---------- */
+
+.notification-action {
+  border: 1px solid @nerv_line;
+  padding: 5px 8px;
+  margin: 3px;
+}
+
+.notification-action:hover {
+  background-color: @nerv_orange;
+  color: @nerv_black;
+}
+
+/* ---------- EMPTY STATE ---------- */
+
+.notification-group {
+  background: transparent;
+  border-radius: 0;
+}
+
+.widget-title label,
+.widget-dnd label,
+.widget-label {
+  color: @nerv_orange;
+}
+
+/* ---------- FOOTER ---------- */
+
+.widget-label {
+  background-color: @nerv_panel;
+
+  border-top: 1px solid @nerv_red;
+  padding: 10px 6px;
+  margin-top: 8px;
+
+  font-size: 12px;
+  font-weight: 600;
+  color: @nerv_red;
+}
+
+/* ---------- SCROLLBAR ---------- */
+
+scrollbar {
+  background-color: @nerv_black;
+}
+
+scrollbar slider {
+  background-color: @nerv_red_dark;
+  border-radius: 0;
+  min-width: 4px;
+  min-height: 30px;
+}
+
+scrollbar slider:hover {
+  background-color: @nerv_orange;
+}
+
+/* ---------- INTERACTION STATES ---------- */
+
+button {
+  transition: none;
+}
+
+button:focus {
+  outline: 1px solid @nerv_orange;
+  outline-offset: -2px;
+}
+
+button:disabled {
+  color: @nerv_muted;
+}
+
+
+/* NERV // CRITICAL ALERT PULSE */
+
+@keyframes nerv-alert-pulse {
+  0% {
+    background-color: #1b080a;
+    border-color: #ff6a00;
+  }
+
+  50% {
+    background-color: #39070d;
+    border-color: #ff002b;
+  }
+
+  100% {
+    background-color: #1b080a;
+    border-color: #ff6a00;
+  }
+}
+
+.notification.critical {
+  animation-name: nerv-alert-pulse;
+  animation-duration: 1.2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+
+  border-left: 6px solid #ff6a00;
+}
+
+.notification.critical .summary {
+  color: #ff6a00;
+}

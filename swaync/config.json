@@ -1,0 +1,69 @@
+{
+  "$schema": "/etc/xdg/swaync/configSchema.json",
+
+  "ignore-gtk-theme": true,
+  "cssPriority": "user",
+
+  "positionX": "right",
+  "positionY": "top",
+  "control-center-positionX": "right",
+  "control-center-positionY": "top",
+
+  "layer": "overlay",
+  "control-center-layer": "overlay",
+  "layer-shell": true,
+  "layer-shell-cover-screen": true,
+  "control-center-exclusive-zone": false,
+
+  "control-center-margin-top": 5,
+  "control-center-margin-bottom": 5,
+  "control-center-margin-right": 5,
+  "control-center-margin-left": 0,
+
+  "control-center-width": 500,
+  "control-center-height": 760,
+  "notification-window-width": 400,
+
+  "notification-body-image-width": 200,
+  "notification-body-image-height": 100,
+
+  "timeout": 10,
+  "timeout-low": 5,
+  "timeout-critical": 0,
+
+  "text-empty": "         [NO ALERTS]\n\nSYSTEM STATUS: NOMINAL",
+  "fit-to-screen": true,
+  "relative-timestamps": true,
+  "keyboard-shortcuts": true,
+  "notification-grouping": true,
+
+  "notification-inline-replies": false,
+  "notification-2fa-action": true,
+
+  "widgets": [
+    "title",
+    "dnd",
+    "notifications",
+    "label#nerv-footer"
+  ],
+
+  "widget-config": {
+    "title": {
+      "text": "NERV COMMAND \nALERT SYSTEM",
+      "clear-all-button": true,
+      "button-text": "CLEAR ALL"
+    },
+
+    "dnd": {
+      "text": "NERV COMMAND LOCKDOWN"
+    },
+
+    "notifications": {
+      "vexpand": true
+    },
+
+    "label#nerv-footer": {
+      "text": "NERV_TERMINAL >  //  SYS: ONLINE  //  MAGI: CONNECTED"
+    }
+  }
+}
