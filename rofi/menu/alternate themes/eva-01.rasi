@@ -1,0 +1,120 @@
+/* Evangelion Unit-01 */
+
+// GLOBAL SETTINGS
+// ------------------------------
+
+* {
+    bg:        #1a0f2e;
+    bg-alt:    #24143f;
+    fg:        #e8ddff;
+    accent:    #6aff3d;
+    accent2:   #00ffd5;
+
+    border:    #6aff3d;
+    selected:  #2e1a55;
+
+    background-color: @bg;
+    // when global background is set, there is no need for it in individual blocks
+    // same thing for other elements
+}
+
+
+// MAIN WINDOW
+// ------------------------------
+
+configuration {
+    show-icons: true;
+    icon-theme: "Papirus";
+    location: 0;
+    font: "JetBrainsMono Nerd Font 12";
+    display-drun: "Launch:";
+}
+
+window {
+    //background-color: @bg;
+    border: 2px;
+    border-color: @border;
+    //border-radius: 6px;
+    padding: 6px;
+    orientation: vertical;
+    width: 35%;
+}
+
+mainbox {
+    //background-color: @bg;
+    children: [inputbar, listview];
+}
+
+
+// INPUT BAR
+// ------------------------------
+
+inputbar {
+    background-image: url("~/Pictures/Eva/asuka_rei_misato.jpg", width);
+    //background-color: @bg-alt;
+    children: [ prompt, entry ];
+    padding: 180 0 0;
+    //border-radius: 4px;
+}
+
+prompt {
+    //background-color: transparent;
+    text-color: @accent;
+    padding: 10 6 0 10;
+    margin: 0 -2 0 0;
+    font: "monospace bold 12";
+}
+
+entry {
+    //background-color: transparent;
+    text-color: @fg;
+    padding: 10 10 0 0;
+    margin: 0 -2 0 0;
+}
+
+// ELEMENT
+// ------------------------------
+
+listview {
+    background-color: transparent;
+    columns: 2;
+    lines: 9;
+    padding: 8 0;
+    fixed-height: true;
+    fixed-columns: true;
+    fixed-lines: true;
+}
+
+element {
+    //background-color: transparent;
+    text-color: @fg;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+element.selected {
+    background-color: @selected;
+    text-color: @accent2;
+    border: 2px;
+    border-color: @border;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    highlight: bold;
+}
+
+element-icon {
+    background-color: transparent;
+    text-color: inherit;
+    size: 24px;
+}
+
+
+scrollbar {
+    border:  0;
+    width: 4px;
+    padding: 0;
+    handle-color: @bg;
+}

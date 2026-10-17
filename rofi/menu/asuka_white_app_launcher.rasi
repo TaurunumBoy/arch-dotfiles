@@ -1,0 +1,121 @@
+/* Asuka white*/
+
+// GLOBAL SETTINGS
+// ------------------------------
+
+* {
+    bg:        #F5F5F5; // Suit white
+    bg-alt:    #6B7280; // Steel grey
+    fg:        #1C1C1C;
+    accent:    #1C1C1C; // Dark charcoal
+    accent2:   #C1121F; // Asuka red
+
+    border:    #C1121F;
+    selected:  #FFFFFF; // Pure white
+
+    background-color: @bg;
+    // when global background is set, there is no need for it in individual blocks
+    // same thing for other elements
+}
+
+// MAIN WINDOW
+// ------------------------------
+
+configuration {
+    show-icons: true;
+    icon-theme: "Papirus";
+    location: 0;
+    font: "JetBrainsMono Nerd Font 12";
+    display-drun: "Launch:";
+}
+
+window {
+    //background-color: @bg;
+    border: 2px;
+    border-color: @border;
+    //border-radius: 6px;
+    padding: 6px;
+    orientation: horizontal;
+    width: 750px;
+}
+
+mainbox {
+    //background-color: @bg;
+    orientation: horizontal;
+    children: [ imagebox, contentbox ];
+}
+
+
+// IMAGE BOX
+// ------------------------------
+
+imagebox {
+    background-image: url("~/Pictures/wallpapers/Eva/asuka_white_plugsuit.jpg", height);
+    background-color: @bg-alt;
+    //border-radius: 4px;
+    padding: 0;
+}
+
+contentbox {
+    orientation: vertical;
+    children: [ inputbar, listview ];
+}
+
+inputbar {
+    background-color: transparent;
+    children: [ prompt, entry ];
+    padding: 10px;
+}
+
+prompt {
+    //background-color: transparent;
+    text-color: @accent;
+    padding: 10 6 0 10;
+    font: "monospace bold 12";
+}
+
+entry {
+    //background-color: transparent;
+    text-color: @accent2;
+    padding: 10 10 0 0;
+}
+
+// CONTENT BOX
+// ------------------------------
+
+listview {
+    background-color: transparent;
+    columns: 1;
+    lines: 9;
+    padding: 8 0;
+    fixed-height: true;
+    fixed-columns: true;
+    fixed-lines: true;
+}
+
+element {
+    //background-color: transparent;
+    text-color: @accent;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+element.selected {
+    background-color: @selected;
+    text-color: @accent2;
+    border: 2px;
+    border-color: @border;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    highlight: bold;
+}
+
+element-icon {
+    background-color: transparent;
+    text-color: inherit;
+    size: 24px;
+}
+

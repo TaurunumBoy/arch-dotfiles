@@ -1,0 +1,100 @@
+/* Asuka */
+
+// GLOBAL SETTINGS
+// ------------------------------
+
+* {
+    bg:        #120809;
+    bg-alt:    #5A0F14; // Dark Crimson
+    fg:        #F5F5F5;
+    accent:    #C1121F; // Eva Red
+    accent2:   #FF6A00; // Armor Orange
+
+    border:    #C1121F;
+    selected:  #3a0f0f;
+
+    background-color: @bg;
+    // when global background is set, there is no need for it in individual blocks
+    // same thing for other elements
+}
+
+// MAIN WINDOW
+// ------------------------------
+
+configuration {
+    show-icons: true;
+    icon-theme: "Papirus";
+    location: 0;
+    font: "JetBrainsMono Nerd Font 20";
+    display-drun: "Launch:";
+}
+
+window {
+    border: 2px;
+    border-color: @border;
+    //border-radius: 6px;
+    padding: 6px;
+    orientation: horizontal;
+    width: 560px;
+}
+
+mainbox {
+    orientation: horizontal;
+    children: [ imagebox, contentbox ];
+}
+
+
+// IMAGE BOX
+// ------------------------------
+
+imagebox {
+    background-image: url("~/Pictures/wallpapers/Eva/asuka_shikinami.jpg", height);
+    background-color: @bg-alt;
+    //border-radius: 4px;
+    padding: 0;
+}
+
+contentbox {
+    orientation: vertical;
+    children: [listview ];
+}
+
+// CONTENT BOX
+// ------------------------------
+
+listview {
+    background-color: transparent;
+    columns: 1;
+    lines: 6;
+    padding: 8 0;
+    fixed-height: true;
+    fixed-columns: true;
+    fixed-lines: true;
+}
+
+element {
+    //background-color: transparent;
+    text-color: @accent;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+element.selected {
+    background-color: @selected;
+    text-color: @accent2;
+    border: 2px;
+    border-color: @border;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    highlight: bold;
+}
+
+element-icon {
+    background-color: transparent;
+    text-color: inherit;
+    size: 24px;
+}
+

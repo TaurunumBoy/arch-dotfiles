@@ -1,0 +1,95 @@
+/* Evangelion Unit-02 */
+
+
+// GLOBAL SETTINGS
+// ------------------------------
+
+* {
+    bg:        #120809;
+    bg-alt:    #5A0F14; // Dark Crimson
+    fg:        #F5F5F5;
+    accent:    #C1121F; // Eva Red
+    accent2:   #FF6A00; // Armor Orange
+    border:    #C1121F;
+    border2:   #5A0F14;
+    selected:  #3a0f0f;
+
+    background-color: rgba(28, 28, 28 ,0.6);
+    // when global background is set, there is no need for it in individual blocks
+    // same thing for other elements
+}
+
+
+// MAIN WINDOW
+// ------------------------------
+
+configuration {
+    show-icons: true;
+    icon-theme: "Papirus";
+    location: 0;
+    font: "Rajdhani 30";
+}
+
+window {
+    //background-color: @bg;
+    location: center;
+    anchor: center;
+    border: 3px;
+    border-color: @border;
+    //border-radius: 6px;
+    // padding: 6px;
+    orientation: horizontal;
+    anchor: center;
+    height: 695px;
+    width: 390px;
+}
+
+mainbox {
+    //background-color: @bg;
+    orientation: horizontal;
+    children: [ listview ];
+}
+
+
+// ELEMENTS
+// ------------------------------
+
+listview {
+    background-image: url("~/Pictures/wallpapers/Eva/asuka.png", height);
+    background-color: transparent;
+    columns: 1;
+    lines: 5;
+    spacing: 10px;
+    padding: 10 40;
+    fixed-height: true;
+    fixed-columns: true;
+    fixed-lines: true;
+}
+
+element {
+    text-color: @fg;
+    padding: 20px;
+    margin: 2px;
+    border-color: @border2;
+    border-radius: 0px;
+}
+
+element.selected {
+    background-color: rgba(58, 15, 15,0.9);
+    text-color: @accent2;
+    border: 3px;
+    border-color: @border;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    highlight: bold;
+    horizontal-align: 0.45;
+}
+
+element-icon {
+    background-color: transparent;
+    text-color: inherit;
+    size: 24px;
+}
