@@ -1,0 +1,143 @@
+{
+  "height": 37,
+  "layer": "bottom",
+  "position": "bottom",
+  "autohide": true,
+  "autohide-blocked": false,
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  "reload_style_on_change": true,
+
+ /* === Modules Order === */
+  "modules-left": [
+    "sway/workspaces",
+    "custom/system-warning"
+  ],
+
+  "modules-center": [
+    "clock#time",
+    "clock#date"
+  ],
+
+  "modules-right": [
+    "disk",
+    "cpu",
+    "memory",
+    "bluetooth",
+    "pulseaudio",
+    "sway/language"
+
+  ],
+
+
+  /* === Modules Left === */
+  "custom/system-warning" : {
+  "exec": "~/.config/waybar/system-warning.sh",
+  "return-type": "json",
+  "interval": 5,
+  "format": "{}",
+  "hide-empty-text": true
+  },
+  "sway/workspaces": {
+    "format": "{name}",
+   /* "persistent-workspaces": {
+      "*": 1
+    },
+    */
+    "disable-scroll": true,
+    "all-outputs": true,
+    "show-special": true
+  },
+
+
+  /* === Modules Right === */
+  "cpu": {
+    "format": "CPU // {usage}%",
+    "format-overload": "WARNING CORE OVERLOAD",
+    "format-critical": "SYSTEM CRITICAL",
+    "format-meltdown": "CORE MELTDOWN",
+    "interval": 2,
+    "tooltip": true,
+    "tooltip-format": "CPU usage: {usage}%\nCores: {cores}",
+    "states": {
+        "overload": 85,
+        "critical": 95,
+        "meltdown": 99
+    }
+  },
+  "memory": {
+    "format": "MEM // {used}GB",
+    "format-memleak": "MEMORY LEAK",
+    "tooltip": true,
+    "tooltip-format": "RAM usage: {used} GB / {total} GB ({percentage}%)",
+    "states": {
+        "memleak": 90 /* Triggers when used RAM goes above 14GB */
+    }
+  },
+  "disk": {
+    "format": "DISK // {free}",
+    "tooltip": true,
+    "tooltip-format": "Disk: {free} / {total} ({percentage_free}%)"
+  },
+  "bluetooth": {
+    "format": "BT // {icon}",
+    "format-disabled": "BT // OFF",
+    "format-off": "BT // OFF",
+    "format-on": "BT // ON",
+    "format-connected": "BT // {device_alias}",
+    "format-connected-battery": "BT // SIGNAL {device_battery_percentage}%",
+
+    "tooltip": true,
+    "tooltip-format": "{status}",
+    "tooltip-format-enumerate-connected": "{device_enumerate}",
+
+    "on-click": "blueman-manager"
+  },
+  "pulseaudio": {
+    "format": "AUDIO // {volume}%",
+    "format-muted": "AUDIO MUTED",
+    "step": 2
+  },
+  "sway/language": {
+    "format": "LANG // {}",
+    "format-en": "ENG",
+    "format-rs": "СРБ"
+  },
+  "clock#time": {
+    "timezone": "Europe/Belgrade",
+    "format": "{:%H:%M:%S}",
+    "interval": 1,
+    "tooltip": false
+  },
+
+
+  "clock#date": {
+    "timezone": "Europe/Belgrade",
+    "format": "{:%Y年%m月%d日}",
+    "interval": 60,
+
+    "tooltip": true,
+    "tooltip-format": "<tt>{calendar}</tt>",
+
+    "calendar": {
+		"mode"             : "month",
+		"mode-mon-col"     : 3,
+		"weeks-pos"        : "right",
+		"first-day-of-week": 1,
+		"on-scroll"        : 1,
+		"on-click-right"   : "mode",
+
+      "format": {
+        "months":     "<span color='#FF6A00'><b>{}</b></span>",
+        "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays":   "<span color='#C6A664'><b>{}</b></span>",
+        "today":      "<span color='#E10600'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions": {
+        "on-click-right": "mode",
+    }
+  }
+}

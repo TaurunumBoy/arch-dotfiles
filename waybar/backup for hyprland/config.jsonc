@@ -1,0 +1,109 @@
+{
+  "layer": "bottom",
+  "position": "bottom",
+  "autohide": true,
+  "autohide-blocked": false,
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  "reload_style_on_change": true,
+
+ /* === Modules Order === */
+  "modules-left": [
+    "cpu",
+    "memory",
+    "disk",
+    "temperature"
+  ],
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
+  "modules-right": [
+    "pulseaudio/slider",
+    "pulseaudio",
+    "hyprland/language",
+    "clock"
+  ],
+
+
+  /* === Modules Left === */
+  "cpu": {
+    "format": "{usage}% ",
+    "tooltip": true,
+    "tooltip-format": "CPU usage: {usage}%\nCores: {cores}"
+  },
+  "memory": {
+    "format": "{}% 󰍛",
+    "tooltip": true,
+    "tooltip-format": "RAM usage: {used} / {total} ({percentage}%)"
+  },
+  "disk": {
+    "format": "{percentage_free}% ",
+    "tooltip": true,
+    "tooltip-format": "Disk: {free} / {total} ({percentage_free}%)"
+  },
+  "temperature": {
+    "format": "{temperatureC}°C {icon}",
+    "tooltip": true,
+    "tooltip-format": "Actual temperature: {temperatureC}°C\nCrítical if > 80°C",
+    "format-icons": [
+      ""
+    ]
+  },
+
+
+ /* === Modules Center === */
+  "hyprland/workspaces": {
+    "format": "{icon}",
+     "format-icons": {
+       "1": "アダム",
+       "2": "リリス",
+       "3": "ラミエル",
+       "4": "レリエル",
+       "5": "バルディエル",
+       "6": "ゼルエル",
+       "7": "Unit-07",
+       "8": "Unit-08",
+       "9": "Unit-09",
+       "10": "Unit-10"
+    },
+    "persistent-workspaces": {
+      "*": 1
+    },
+    "disable-scroll": true,
+    "all-outputs": true,
+    "show-special": true
+  },
+
+
+  /* === Modules Right === */
+  "pulseaudio/slider": {
+    "format": "{volume}%",
+    "format-muted": " MUTE",
+    "step": 2,
+    "tooltip": false
+  },
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-muted": " {format_source}",
+    "format-icons": {
+      "default": [
+        "",
+        ""
+      ]
+    }
+  },
+  "hyprland/language": {
+    "format": "{} ",
+    "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next",
+    "format-en": "ENG"
+  },
+  "clock": {
+    "timezone": "Europe/Belgrade",
+    "format": "{:%H:%M:%S  %d.%m.%Y}",
+    "tooltip-format": "{calendar}",
+    "calendar": {
+      "mode": "month"
+    }
+  }
+}

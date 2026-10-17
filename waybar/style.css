@@ -1,0 +1,234 @@
+/* -- Global rules -- */
+* {
+    border: none;
+    border-color: #C1121F;
+    font-family: "Rajdhani";
+    font-weight: 700;
+    font-size: 17px;
+    min-height: 0px;
+}
+
+window#waybar {
+    background: rgba(18, 8, 9, 1.0);
+    /*border-bottom: 3px solid #FF6A00;*/
+}
+
+window#waybar.hidden {
+    opacity: 0.0;
+}
+
+/* - General rules for visible modules -- */
+
+#custom-system-warning,
+#clock,
+#cpu,
+#memory,
+#disk,
+#bluetooth,
+#pulseaudio,
+#language {
+color: #FF6A00;
+margin-top: 2px;
+margin-bottom: 2px;
+padding-left: 10px;
+padding-right: 10px;
+transition: none;
+
+}
+
+/* Separation to the left */
+#disk,
+#clock {
+margin-left: 2px;
+border-top-left-radius: 0px;
+border-bottom-left-radius: 0px;
+}
+
+/* Separation to the rigth */
+#language,
+#clock {
+margin-right: 5px;
+border-top-right-radius: 0px;
+border-bottom-right-radius: 0px;
+}
+
+
+
+/* -- Specific styles -- */
+
+/*================================*/
+/* =====MODULES ON THE LEFT===== */
+/*================================*/
+
+#custom-system-warning {
+background: rgba(28, 28, 28, 0);
+margin-left: 20px;
+border: 1px solid #C1121F;
+font-weight: 700;
+padding: 0 10px;
+}
+
+#custom-system-warning.hidden {
+padding: 0;
+}
+
+#custom-system-warning.critical {
+background-color: #C1121F;
+color: #FFFFFF;
+border-color: #C1121F;
+animation: eva-flash 0.2s steps(2, start) infinite;
+}
+
+#workspaces {
+background: rgba(28, 28, 28, 0);
+/*border: 1px solid #C1121F;*/
+margin: 1px 5px;
+padding: 0px 0px;
+}
+
+#workspaces button {
+color: #B3A8A0;
+background: transparent;
+box-shadow: none;
+border-radius: 0;
+/*border: 1px solid #C1121F;*/
+padding: 4px 4px;
+transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+#workspaces button.occupied {
+color: #1C1C1C;
+}
+
+#workspaces button.active {
+color: #1C1C1C;
+text-shadow: 0 0 4px #1C1C1C;
+}
+
+#workspaces button:hover {
+color: #C1121F;
+}
+
+#workspaces button.focused {
+color: #FF6A00;
+background: #1C1C1C;
+border: 1px solid #C1121F;
+}
+
+#workspaces button.urgent {
+color: #B3A8A0;
+background: #C1121F;
+}
+
+#workspaces button.active:hover {}
+
+
+/*================================*/
+/* =====MODULES IN THE CENTER===== */
+/*================================*/
+
+
+#clock.time,
+#clock.date {
+font-size: 18px;
+background: #1C1C1C;
+border: 1px solid #C1121F;
+font-feature-settings: "tnum" /* For using fixed-width numbers, if seconds are moving other modules to the side */ /*works only if font supports it*/
+}
+
+
+/*================================*/
+/* =====MODULES ON THE RIGHT===== */
+/*================================*/
+
+#disk {
+background: #1C1C1C;
+border: 1px solid #C1121F;
+}
+
+#cpu {
+background: #1C1C1C;
+border: 1px solid #C1121F;
+margin-left: 5px;
+}
+
+#cpu.overload {
+background-color: #FFD000;
+color: #B3A8A0;
+border-color: #FFD000;
+padding: 0 14px;
+animation: eva-flash 0.6s steps(2, start) infinite;
+}
+
+#cpu.critical {
+background-color: #C1121F;
+color: #FFFFFF;
+border-color: #C1121F;
+padding: 0 14px; /* Slightly wider padding for urgent focus */
+animation: eva-flash 0.3s steps(2, start) infinite;
+}
+
+#cpu.meltdown {
+background-color: #C1121F;
+color: #FFFFFF;
+border-color: #C1121F;
+padding: 0 16px;
+animation: eva-flash 0.2s steps(2, start) infinite;
+}
+
+#memory {
+background: #1C1C1C;
+border: 1px solid #C1121F;
+margin-left: 5px;
+}
+
+#memory.memleak {
+background-color: #C1121F; /* High-intensity amber hazard color */
+color: #B3A8A0;
+border-color: #C1121F;
+padding: 0 14px;
+animation: eva-flash 0.4s steps(2, start) infinite;
+}
+
+#bluetooth {
+background: #1C1C1C;
+border: 1px solid #C1121F;
+margin-left: 5px;
+}
+
+#bluetooth.on {
+border: 1px solid #20F0FF;
+}
+
+#bluetooth.connected {
+border: 1px solid #6AFF00;
+}
+
+#bluetooth.discovering {
+border: 1px solid #FFD000;
+}
+
+#pulseaudio {
+min-width: 55px;
+color: #FF6A00;
+background: #1C1C1C;
+border: 1px solid #C1121F;
+margin-left: 5px;
+}
+
+#language {
+background: #1C1C1C;
+border: 1px solid #C1121F;
+padding-right: 15px;
+margin-left: 5px;
+margin-right: 10px;
+}
+
+/* === Optional animation === */
+@keyframes eva-flash {
+    to {
+        background-color: #1C1C1C;
+        color: #5A0F14;
+    }
+}
+
