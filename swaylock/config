@@ -1,0 +1,62 @@
+ignore-empty-password
+font=Rajdhani
+
+clock
+timestr=%R
+datestr=%a, %B %e
+
+# fingerprint
+
+# Add image as Background
+image=~/Pictures/wallpapers/Eva/nikke_x_eva.jpeg
+
+# Add screenshots as Background
+# screenshots
+show-failed-attempts
+
+# Fade effect
+# fade-in=0.2
+
+# Background effect
+# effect-blur=20x2
+# effect-grayscale
+# effect-pixalete=5
+
+# Show/hide indicator circle
+indicator
+indicator-radius=150
+indicator-thickness=7
+indicator-caps-lock
+
+key-hl-color=F5F5F5
+
+separator-color=00000000
+
+inside-color=0d0d1266
+inside-clear-color=aac2db66     #when clearing password
+inside-caps-lock-color=b35d78   #when caps lock is enabled
+inside-ver-color=5A0F14         #password being verified
+inside-wrong-color=ee2e2400     #wrong password
+
+ring-color=C1121F
+ring-clear-color=FF6A00
+ring-caps-lock-color=FFFFFF
+ring-ver-color=5A0F14           #password being verified
+ring-wrong-color=FF6A00
+
+line-color=00000000             #password input progress
+line-clear-color=FF6A00
+line-caps-lock-color=FF6A00
+line-ver-color=5A0F14
+line-wrong-color=ee2e24FF
+
+text-clear-color=FF6A00
+text-ver-color=5A0F14
+text-wrong-color=ee2e2400
+
+bs-hl-color=6B7280              #backspace color
+caps-lock-key-hl-color=ffd204FF
+caps-lock-bs-hl-color=ee2e24FF
+disable-caps-lock-text
+text-caps-lock-color=009ddc
+
